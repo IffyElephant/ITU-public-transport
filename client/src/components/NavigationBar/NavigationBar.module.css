@@ -1,0 +1,60 @@
+.navigation-bar {
+  background-color: #f2f2f2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  height: 5rem;
+  width: auto;
+
+  position: relative;
+
+  top: 1.25rem;
+  left: 3.5rem;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  flex-grow: 0.1;
+
+  margin-right: 3.5rem;
+}
+
+.navigation > * {
+  flex: 1;
+
+  background-color: #efefef;
+  color: black;
+
+  text-decoration: none;
+  text-align: center;
+  font-size: 1.35rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  padding: 1rem;
+  margin: 0.2rem;
+  border: black 0.1rem solid;
+  border-radius: 1rem;
+
+  box-shadow: black 0rem 0rem 0.23rem;
+}
+
+.sign-in {
+  border: #ff0000 0.3rem solid;
+  box-shadow: #ff0000 0rem 0rem 0.23rem;
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.sign-up {
+  border: #ff0000 0.3rem solid;
+  box-shadow: #ff0000 0rem 0rem 0.23rem;
+  background-color: #ff0000;
+
+  color: white;
+  font-weight: bold;
+}
