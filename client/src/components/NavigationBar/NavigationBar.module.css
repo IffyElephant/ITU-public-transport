@@ -1,5 +1,5 @@
 .navigation-bar {
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 
   display: flex;
   justify-content: space-between;
@@ -10,10 +10,13 @@
   height: 5rem;
   width: auto;
 
-  position: relative;
+  margin-top: 0.6rem;
+  margin-left: 2.45rem;
+  margin-bottom: 0.6rem;
+}
 
-  top: 1.25rem;
-  left: 3.5rem;
+.logo:hover {
+  filter: drop-shadow(0rem 0rem 0.125rem #000000);
 }
 
 .navigation {
@@ -24,37 +27,37 @@
   margin-right: 3.5rem;
 }
 
-.navigation > * {
+.nav-btn {
   flex: 1;
 
-  background-color: #efefef;
   color: black;
 
   text-decoration: none;
   text-align: center;
-  font-size: 1.35rem;
+  font-size: rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
 
   padding: 1rem;
   margin: 0.2rem;
-  border: black 0.1rem solid;
-  border-radius: 1rem;
+}
 
-  box-shadow: black 0rem 0rem 0.23rem;
+.nav-btn:after {
+  display: block;
+  content: "";
+  border-bottom: solid 0.17rem;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.nav-btn:hover:after {
+  transform: scaleX(1);
 }
 
 .sign-in {
-  border: #ff0000 0.3rem solid;
-  box-shadow: #ff0000 0rem 0rem 0.23rem;
   color: #ff0000;
-  font-weight: bold;
 }
 
 .sign-up {
-  border: #ff0000 0.3rem solid;
-  box-shadow: #ff0000 0rem 0rem 0.23rem;
-  background-color: #ff0000;
-
-  color: white;
-  font-weight: bold;
+  color: #ff0000;
 }
