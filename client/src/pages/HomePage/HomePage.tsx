@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { Counter } from "../../components/Counter";
 import { Footer } from "../../components/Footer";
 import { NavigationBar } from "../../components/NavigationBar/NavigationBar";
 import { NewsBlock } from "../../components/NewsBlock";

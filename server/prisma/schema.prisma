@@ -13,3 +13,31 @@ generator client {
 // =======================
 // =   Database Schema   =
 // =======================
+
+model User {
+  id    Int    @id @default(autoincrement())
+  email String @unique
+  pwd   String
+}
+
+model Article {
+  id    Int    @id @default(autoincrement())
+  label String
+  desc  String
+}
+
+model Connection {
+  id     Int    @id @default(autoincrement())
+  number String @unique
+  type   String // BUS | SALINA
+
+  stops     String
+  exclusion String
+}
+
+model Stop {
+  id    Int    @id @default(autoincrement())
+  label String @unique
+
+  connections String
+}
