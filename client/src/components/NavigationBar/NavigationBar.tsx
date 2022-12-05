@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styles from "./NavigationBar.module.css";
+import classnames from "classnames";
 
 export const NavigationBar: FC = () => {
   return (
@@ -13,15 +14,29 @@ export const NavigationBar: FC = () => {
       </a>
 
       <nav className={styles["navigation"]}>
-        <a href="/connections">Connections</a>
-        <a href="/stops">Stops</a>
-        <a href="/tickets">Tickets</a>
-        <a href="/services">Services</a>
-        <a className={styles["sign-in"]} href="/login">
-          Sign In
+        <a className={styles["nav-btn"]} href="/connections">
+          Spojení
         </a>
-        <a className={styles["sign-up"]} href="/register">
-          Sign Up
+        <a className={styles["nav-btn"]} href="/stops">
+          Zastávky
+        </a>
+        <a className={styles["nav-btn"]} href="/tickets">
+          Lístky
+        </a>
+        <a className={styles["nav-btn"]} href="/services">
+          Služby
+        </a>
+        <a
+          className={classnames(styles["nav-btn"], styles["sign-in"])}
+          href="/login"
+        >
+          Přihlášení
+        </a>
+        <a
+          className={classnames(styles["nav-btn"], styles["sign-up"])}
+          href="/register"
+        >
+          Registrace
         </a>
       </nav>
     </div>
