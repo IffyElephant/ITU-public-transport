@@ -9,7 +9,7 @@ export interface NewsProps {
 
 export const NewsBlock: FC<NewsProps> = ({ url, label, desc }) => {
   return (
-    <a className={styles["block"]} href="/label">
+    <a className={styles["block"]} href="/news">
       <img src={url} alt={label} />
       <p className={styles["label"]}>{label}</p>
       <div className={styles["block-desc"]}>

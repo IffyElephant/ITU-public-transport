@@ -8,12 +8,17 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Pages
 import { HomePage } from "./pages/HomePage";
+import { NewsPage } from "./pages/NewsPage/NewsPage";
 
 const router = createBrowserRouter([
   // Home Page
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/news",
+    element: <NewsPage />,
   },
 ]);
 

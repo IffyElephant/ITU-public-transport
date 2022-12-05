@@ -4,6 +4,7 @@ import { Footer } from "../../components/Footer";
 import { NavigationBar } from "../../components/NavigationBar/NavigationBar";
 import { NewsBlock } from "../../components/NewsBlock";
 import styles from "./HomePage.module.css";
+import classnames from "classnames";
 
 export const HomePage: FC = () => {
   return (
@@ -19,7 +20,7 @@ export const HomePage: FC = () => {
         <h1>Novinky</h1>
       </div>
 
-      <div className={styles["news-block"]}>
+      <div className={classnames(styles["main-section"], styles["news-block"])}>
         <NewsBlock
           url="https://pipniajed.cz/img/galerie/info2.jpg"
           label="Pípni a jeď!"
