@@ -1,0 +1,96 @@
+.container {
+  margin-top: 1rem;
+
+  display: flex;
+  flex-direction: row;
+
+  margin-left: 0.5rem;
+}
+
+.icon {
+  flex: 1;
+
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+
+  max-width: 3.5rem;
+  max-height: 3.5rem;
+
+  filter: invert(1);
+
+  background-color: #00ffff;
+
+  padding: 0.5rem;
+}
+
+.bus-icon {
+  max-width: 3rem !important;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.connection {
+  flex: 1 1 8%;
+  display: flex;
+
+  margin: 0.5rem;
+
+  height: 4.5rem;
+  min-width: 4.5rem;
+  max-width: 4.5rem;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.5rem;
+
+  color: #ffffff;
+  background-color: #c60000;
+
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+}
+
+.connection:focus {
+  background-color: #ff0000 !important;
+  box-shadow: 0rem 0.2rem 0.5rem black;
+  font-weight: bold;
+}
+
+.connection-table {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  width: 60rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.main > div {
+  margin-top: 5rem;
+  width: 60rem;
+}
+
+.label {
+  font-size: 2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+
+  padding-bottom: 0.5rem;
+
+  border-bottom: black 0.3rem solid;
+}
+
+.text {
+  margin-top: 2rem;
+
+  font-size: 1.2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}

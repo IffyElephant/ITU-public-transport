@@ -14,7 +14,7 @@ export const NavigationBar: FC = () => {
       </a>
 
       <nav className={styles["navigation"]}>
-        <a className={styles["nav-btn"]} href="/connections">
+        <a className={styles["nav-btn"]} href="/spojeni">
           Spojení
         </a>
         <a className={styles["nav-btn"]} href="/stops">

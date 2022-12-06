@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { PrismaService } from './prisma.service';
 
@@ -14,8 +14,26 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/stops')
-  getArticles() {
-    return this.prisma.stop.findMany();
+  @Get('/connection/numbers')
+  getConnectionNumbers() {
+    return this.prisma.connection.findMany({
+      select: { type: true, number: true },
+    });
+  }
+
+  @Get('/connection/stops/:id')
+  getConnectionStops(@Param('id') id: string) {
+    return this.prisma.connection.findFirst({
+      where: { number: id },
+      select: { stops: true },
+    });
+  }
+
+  @Get('/connection/exclusions/:id')
+  getConnectionExclusions(@Param('id') id: string) {
+    return this.prisma.connection.findFirst({
+      where: { number: id },
+      select: { exclusion: true },
+    });
   }
 }
