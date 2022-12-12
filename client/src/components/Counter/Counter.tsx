@@ -1,3 +1,4 @@
+// Author: Simon Peter Hruz (xhruzs00)
 import { FC, useState } from "react";
 import styles from "./Counter.module.css";
 

@@ -10,6 +10,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HomePage } from "./pages/HomePage";
 import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { ConnectionsPage } from "./pages/ConnectionsPage";
+import { StopsPage } from "./pages/StopsPage";
 
 const router = createBrowserRouter([
   // Home Page
@@ -18,12 +19,16 @@ const router = createBrowserRouter([
     element: <HomePage />,
   },
   {
-    path: "/clanky",
+    path: "/clanky/:id",
     element: <NewsPage />,
   },
   {
     path: "/spojeni",
     element: <ConnectionsPage />,
+  },
+  {
+    path: "/zastavky",
+    element: <StopsPage />,
   },
 ]);
 

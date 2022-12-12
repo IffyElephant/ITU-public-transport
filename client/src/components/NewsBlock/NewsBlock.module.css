@@ -12,11 +12,34 @@
   text-decoration: none;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
+
+  transition: 0.2s ease-in-out;
 }
 
-.block > img {
+.block:hover {
+  box-shadow: #ff0000 0rem 0.1rem 1rem;
+}
+
+.img-cont {
+  width: auto;
+  height: 16.5rem;
+
   border-top-right-radius: 2rem;
   border-top-left-radius: 2rem;
+
+  overflow: hidden;
+}
+
+.img-cont > img {
+  display: flex;
+  justify-content: center;
+
+  width: 40rem;
+  height: auto;
+
+  position: relative;
+  top: 12%;
+  transform: translateY(-12%);
 }
 
 .block-desc {
@@ -73,10 +96,12 @@
   top: 1rem;
 
   color: #e8e8e8;
-  background-color: #e80000;
+  background-color: #a60000;
 
   border-bottom-right-radius: 2rem;
   border-top-left-radius: 2rem;
+
+  transition: 0.2s ease-in-out;
 }
 
 .btn:hover {

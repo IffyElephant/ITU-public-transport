@@ -1,3 +1,4 @@
+// Author: Simon Peter Hruz (xhruzs00)
 import { FC } from "react";
 import styles from "./NavigationBar.module.css";
 import classnames from "classnames";
@@ -17,7 +18,7 @@ export const NavigationBar: FC = () => {
         <a className={styles["nav-btn"]} href="/spojeni">
           Spojení
         </a>
-        <a className={styles["nav-btn"]} href="/stops">
+        <a className={styles["nav-btn"]} href="/zastavky">
           Zastávky
         </a>
         <a className={styles["nav-btn"]} href="/tickets">

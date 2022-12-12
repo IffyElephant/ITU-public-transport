@@ -14,6 +14,28 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  @Get('/stops')
+  getStops() {
+    return this.prisma.stop.findMany({
+      select: { label: true, connections: true },
+    });
+  }
+
+  @Get('/connection/articles')
+  getArticles() {
+    return this.prisma.article.findMany({
+      select: { id: true, label: true, descShort: true, picture: true },
+    });
+  }
+
+  @Get('/connection/article/:id')
+  getArticleById(@Param('id') id: string) {
+    return this.prisma.article.findFirst({
+      where: { id: parseInt(id) },
+      select: { label: true, desc: true, picture: true },
+    });
+  }
+
   @Get('/connection/numbers')
   getConnectionNumbers() {
     return this.prisma.connection.findMany({
@@ -21,19 +43,63 @@ export class AppController {
     });
   }
 
-  @Get('/connection/stops/:id')
-  getConnectionStops(@Param('id') id: string) {
+  @Get('/connection/stops/:number')
+  getConnectionStops(@Param('number') number: string) {
     return this.prisma.connection.findFirst({
-      where: { number: id },
-      select: { stops: true },
+      where: { number: number },
+      select: { stops: true, signs: true },
     });
   }
 
-  @Get('/connection/exclusions/:id')
-  getConnectionExclusions(@Param('id') id: string) {
+  @Get('/connection/exclusions/:number')
+  getConnectionExclusions(@Param('number') number: string) {
     return this.prisma.connection.findFirst({
-      where: { number: id },
+      where: { number: number },
       select: { exclusion: true },
+    });
+  }
+
+  @Get('/connection/timings/:number/:lastStop')
+  getConnectionTimings(
+    @Param('number') number: string,
+    @Param('lastStop') lastStop: string,
+  ) {
+    return this.prisma.destination.findFirst({
+      where: { number: number, lastStop: lastStop },
+      select: { timings: true, signs: true },
+    });
+  }
+
+  @Get('/connection/days/:number/:lastStop/workdays')
+  getConnectionWorkdays(
+    @Param('number') number: string,
+    @Param('lastStop') lastStop: string,
+  ) {
+    return this.prisma.destination.findFirst({
+      where: { number: number, lastStop: lastStop },
+      select: { workdays: true },
+    });
+  }
+
+  @Get('/connection/days/:number/:lastStop/holidays')
+  getConnectionHolidays(
+    @Param('number') number: string,
+    @Param('lastStop') lastStop: string,
+  ) {
+    return this.prisma.destination.findFirst({
+      where: { number: number, lastStop: lastStop },
+      select: { holidays: true },
+    });
+  }
+
+  @Get('/connection/days/:number/:lastStop/weekends')
+  getConnectionWeekends(
+    @Param('number') number: string,
+    @Param('lastStop') lastStop: string,
+  ) {
+    return this.prisma.destination.findFirst({
+      where: { number: number, lastStop: lastStop },
+      select: { weekends: true },
     });
   }
 }
