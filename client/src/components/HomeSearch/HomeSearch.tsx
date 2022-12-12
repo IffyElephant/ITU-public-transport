@@ -4,14 +4,20 @@ import styles from "./HomeSearch.module.css";
 import classnames from "classnames";
 
 export const HomeSearch: FC = () => {
-  const [start, setStart] = useState<string>();
-  const [end, setEnd] = useState<string>();
+  const [start, setStart] = useState<string>("");
+  const [end, setEnd] = useState<string>("");
 
   const [timeType, setTimeType] = useState<string>();
 
+  const swapStops = () => {
+    const swap = start;
+    setStart(end);
+    setEnd(swap);
+  };
+
   return (
     <div>
-      <form className={styles["form"]}>
+      <div className={styles["form"]}>
         <label className={styles["label"]}>Odkud</label>
         <input
           className={styles["input"]}
@@ -31,7 +37,6 @@ export const HomeSearch: FC = () => {
         />
 
         <select
-          placeholder="Kdy"
           className={classnames(styles["btn"], styles["select"])}
           onChange={(e) => setTimeType(e.target.value)}
         >
@@ -57,9 +62,12 @@ export const HomeSearch: FC = () => {
 
         <div className={styles["btn-cont"]}>
           <button className={styles["btn"]}>Vyhledat</button>
-          <button className={classnames(styles["btn"], styles["btn-swap"])} />
+          <button
+            className={classnames(styles["btn"], styles["btn-swap"])}
+            onClick={swapStops}
+          />
         </div>
-      </form>
+      </div>
     </div>
   );
 };
