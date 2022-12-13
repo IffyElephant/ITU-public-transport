@@ -1,3 +1,4 @@
+// Author: Simon Peter Hruz (xhruzs00)
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -11,6 +12,7 @@ import { HomePage } from "./pages/HomePage";
 import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { ConnectionsPage } from "./pages/ConnectionsPage";
 import { StopsPage } from "./pages/StopsPage";
+import { ServicesPage } from "./pages/ServicesPage";
 
 const router = createBrowserRouter([
   // Home Page
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/zastavky",
     element: <StopsPage />,
+  },
+  {
+    path: "/sluzby",
+    element: <ServicesPage />,
   },
 ]);
 

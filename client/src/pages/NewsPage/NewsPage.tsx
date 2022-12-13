@@ -2,6 +2,7 @@
 import { FC, useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Footer } from "../../components/Footer";
+import { HierarchyNav } from "../../components/HierarchyNav";
 import { NavigationBar } from "../../components/NavigationBar";
 import styles from "./NewsPage.module.css";
 
@@ -36,16 +37,12 @@ export const NewsPage: FC = () => {
   }, [location.pathname]);
 
   return (
-    <div className={styles["container"]}>
+    <div>
       <NavigationBar />
 
-      <div className={styles["main-section"]}>
-        <nav className={styles["section-nav"]}>
-          <a href="/">Domov</a>
-          <p>{">"}</p>
-          <a href="">{article && article.label}</a>
-        </nav>
+      <HierarchyNav label2={article?.label || "Neznámí název"} />
 
+      <div className={styles["main-section"]}>
         <div className={styles["label"]}>{article && article.label}</div>
 
         <div className={styles["main"]}>

@@ -10,6 +10,7 @@ import { VehiclesTable } from "../../components/VehiclesTable";
 
 import styles from "./ConnectionsPage.module.css";
 import classnames from "classnames";
+import { HierarchyNav } from "../../components/HierarchyNav";
 
 export const ConnectionsPage: FC = () => {
   const [activeVehicle, setActiveVehicle] = useState<string>();
@@ -17,6 +18,7 @@ export const ConnectionsPage: FC = () => {
   return (
     <>
       <NavigationBar />
+      <HierarchyNav label2="Spoje" />
 
       <div className={styles["main"]}>
         <div className={styles["label"]}>Spoje</div>

@@ -51,7 +51,7 @@
 .news-block > * {
   margin: 2rem;
 
-  box-shadow: #000000 0 0 0.45rem;
+  box-shadow: 0rem 0rem 1rem #8d8d8d;
 }
 
 .white-pannel {

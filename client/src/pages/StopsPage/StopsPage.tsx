@@ -3,6 +3,7 @@ import { FC, useEffect, useState } from "react";
 
 // components
 import { Footer } from "../../components/Footer";
+import { HierarchyNav } from "../../components/HierarchyNav";
 import { NavigationBar } from "../../components/NavigationBar";
 
 import styles from "./StopsPage.module.css";
@@ -14,6 +15,9 @@ type StopType = {
 
 export const StopsPage: FC = () => {
   const [stops, setStops] = useState<StopType[]>();
+  const [query, setQuery] = useState<string>("");
+  let foundOne = false;
+  let result = false;
 
   useEffect(() => {
     fetch("/api/stops", {
@@ -25,8 +29,6 @@ export const StopsPage: FC = () => {
     })
       .then((r) => r.json())
       .then((data) => {
-        console.log(data);
-
         data.map((c: any) => (c.connections = c.connections.split("-")));
 
         setStops(data);
@@ -37,8 +39,18 @@ export const StopsPage: FC = () => {
     <div>
       <NavigationBar />
 
+      <HierarchyNav label2="Zastávky" />
+
       <div className={styles["main"]}>
         <div className={styles["label"]}>Zastávky</div>
+
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          className={styles["search"]}
+          placeholder="Vyhledat"
+        />
 
         <div className={styles["table"]}>
           <div className={styles["table-rows"]}>
@@ -56,19 +68,41 @@ export const StopsPage: FC = () => {
               Spojení
             </div>
           </div>
-
           {stops &&
-            stops.map((c) => (
-              <div className={styles["table-rows"]}>
-                <div className={styles["table-names"]}>{c.label}</div>
+            stops.map((c) => {
+              result = false;
 
-                <div className={styles["table-numbers"]}>
-                  {c.connections.map((d) => (
-                    <div>{d}</div>
-                  ))}
-                </div>
-              </div>
-            ))}
+              const myQuery = query.split(" ");
+
+              if (
+                myQuery.some((subq) => c.connections.includes(subq)) ||
+                myQuery.some((subq) => c.label.includes(subq))
+              ) {
+                foundOne = true;
+                result = true;
+              }
+
+              return (
+                <>
+                  {(!query || (query && result)) && (
+                    <>
+                      <div className={styles["table-rows"]}>
+                        <div className={styles["table-names"]}>{c.label}</div>
+
+                        <div className={styles["table-numbers"]}>
+                          {c.connections.map((d) => (
+                            <div>{d}</div>
+                          ))}
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </>
+              );
+            })}
+          {!foundOne && (
+            <div className={styles["table-names"]}>Žádná zhoda</div>
+          )}
         </div>
       </div>
 

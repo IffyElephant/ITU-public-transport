@@ -6,66 +6,14 @@
 }
 
 .main-section {
-  flex-grow: 1;
-
   margin-left: 20rem;
   margin-right: 20rem;
-  margin-top: 3rem;
   margin-bottom: 6rem;
 
   padding-bottom: 2rem;
 
   background-color: #ffffff;
-
-  box-shadow: 0 0.15rem 0.3rem black;
-}
-
-.section-nav {
-  display: flex;
-  flex-direction: row;
-
-  text-align: center;
-  align-items: center;
-
-  margin-top: 3rem;
-  margin-left: 2rem;
-
-  font-size: 1.2rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: bold;
-}
-
-.section-nav > a:after {
-  display: block;
-  content: "";
-  border-bottom: solid 0.17rem;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-}
-
-.section-nav > a:hover:after {
-  transform: scaleX(1);
-}
-
-.section-nav > * {
-  text-decoration: none;
-  color: #000000;
-
-  margin: 0.2rem;
-}
-
-.label {
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
-
-  padding: 1rem;
-
-  font-size: 2rem;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: bold;
-
-  border-bottom: 0.23rem solid black;
+  box-shadow: 0rem 0rem 1rem #8d8d8d;
 }
 
 .main {
@@ -76,6 +24,22 @@
   margin-left: 2rem;
 
   padding-bottom: 2rem;
+
+  min-height: 36rem;
+}
+
+.label {
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+  padding: 1rem;
+  padding-top: 2rem;
+
+  font-size: 2rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+
+  border-bottom: 0.23rem solid black;
 }
 
 .text {
