@@ -11,7 +11,7 @@ import classnames from "classnames";
 
 export const RegisterPage: FC = () => {
   // Test data just to showcase error state
-  const user = { email: "user@gmail.com", pwd: "123456" };
+  const user = { email: "user@gmail.com" };
   const [name, setName] = useState<string>();
   const [lastName, setLastName] = useState<string>();
   const [email, setEmail] = useState<string>();
