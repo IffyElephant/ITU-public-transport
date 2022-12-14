@@ -1,3 +1,4 @@
+// Author: Simon Peter Hruz (xhruzs00)
 import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { PrismaService } from './prisma.service';

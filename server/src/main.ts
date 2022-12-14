@@ -1,3 +1,4 @@
+// Author: Simon Peter Hruz (xhruzs00)
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 

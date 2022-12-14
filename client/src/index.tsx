@@ -8,12 +8,15 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Pages
-import { HomePage } from "./pages/HomePage";
-import { NewsPage } from "./pages/NewsPage/NewsPage";
-import { ConnectionsPage } from "./pages/ConnectionsPage";
-import { StopsPage } from "./pages/StopsPage";
-import { ServicesPage } from "./pages/ServicesPage";
-import { TicketsPage } from "./pages/TicketsPage";
+import { HomePage } from "./pages/xhruzs00/HomePage";
+import { NewsPage } from "./pages/xhruzs00/NewsPage";
+import { ConnectionsPage } from "./pages/xhruzs00/ConnectionsPage";
+import { StopsPage } from "./pages/xhruzs00/StopsPage";
+import { ServicesPage } from "./pages/xhruzs00/ServicesPage";
+import { TicketsPage } from "./pages/xbrazi01/TicketsPage";
+import { LoginPage } from "./pages/xhruzs00/LoginPage/LoginPage";
+import { RegisterPage } from "./pages/xhruzs00/RegisterPage";
+import { AccoountPage } from "./pages/xhruzs00/AccoountPage";
 
 const router = createBrowserRouter([
   // Home Page
@@ -40,6 +43,18 @@ const router = createBrowserRouter([
   {
     path: "/listky",
     element: <TicketsPage />,
+  },
+  {
+    path: "/prihlaseni",
+    element: <LoginPage />,
+  },
+  {
+    path: "/registrace",
+    element: <RegisterPage />,
+  },
+  {
+    path: "/ucet",
+    element: <AccoountPage />,
   },
 ]);
 
