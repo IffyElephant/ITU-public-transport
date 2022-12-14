@@ -73,10 +73,11 @@ export const StopsPage: FC = () => {
               result = false;
 
               const myQuery = query.split(" ");
+              const myLabel = c.label.toLowerCase();
 
               if (
                 myQuery.some((subq) => c.connections.includes(subq)) ||
-                myQuery.some((subq) => c.label.includes(subq))
+                myQuery.some((subq) => myLabel.includes(subq))
               ) {
                 foundOne = true;
                 result = true;

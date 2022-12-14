@@ -98,7 +98,7 @@ export const ServicesPage: FC = () => {
                 )}
               >
                 <a className={styles["panel"]} href={c.url}>
-                  {c.label}
+                  <div>{c.label}</div>
                 </a>
               </div>
             );

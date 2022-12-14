@@ -13,6 +13,7 @@ import { NewsPage } from "./pages/NewsPage/NewsPage";
 import { ConnectionsPage } from "./pages/ConnectionsPage";
 import { StopsPage } from "./pages/StopsPage";
 import { ServicesPage } from "./pages/ServicesPage";
+import { TicketsPage } from "./pages/TicketsPage";
 
 const router = createBrowserRouter([
   // Home Page
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/sluzby",
     element: <ServicesPage />,
+  },
+  {
+    path: "/listky",
+    element: <TicketsPage />,
   },
 ]);
 

@@ -41,8 +41,9 @@ export const HomePage: FC = () => {
             <HomeSearch />
           </div>
         </div>
-        <h1>Novinky</h1>
       </div>
+
+      <div className={styles["label"]}>Novinky</div>
 
       <div className={classnames(styles["main-section"], styles["news-block"])}>
         {articles &&

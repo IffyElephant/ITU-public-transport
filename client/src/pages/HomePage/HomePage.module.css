@@ -14,6 +14,25 @@
   flex-direction: column;
 
   overflow: hidden;
+
+  align-items: center;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 1.8rem;
+
+  color: #3b3b3b;
+  border-bottom: #3b3b3b solid 0.15rem;
+
+  width: 70rem;
+
+  margin: auto;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
 }
 
 .photo {
@@ -25,9 +44,9 @@
   justify-content: flex-start;
 
   width: 100%;
-  height: 30rem;
+  height: 35rem;
 
-  border-top: #ff0000 0.2rem solid;
+  /* border-top: #ff0000 0.2rem solid; */
 }
 
 .search {
@@ -52,21 +71,4 @@
   margin: 2rem;
 
   box-shadow: 0rem 0rem 1rem #8d8d8d;
-}
-
-.white-pannel {
-  margin: 0rem;
-  max-height: 35rem;
-
-  color: #ffffff;
-  background-color: #ff0000;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-}
-
-.white-pannel > h1 {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
